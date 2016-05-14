@@ -1,8 +1,8 @@
 import 'FieldObject.dart';
 import 'Wall.dart';
 import 'dart:io';
-import 'Ground.dart';
-import 'Target.dart';
+import 'dart:core';
+
 
 class QuattroLinkedList {
   FieldObject root;
@@ -65,11 +65,18 @@ class QuattroLinkedList {
   }
 
   printRight() {
-    stdout.write(nextPrint);
+    stdout.write(nextPrint.runtimeType.toString().substring(0, 1));
+    if (nextPrint.rightPointer != null) {
+      nextPrint = nextPrint.rightPointer;
+    }
   }
 
   printDown() {
-
+    if (firstInRowPrint.downPointer != null) {
+      firstInRowPrint = firstInRowPrint.downPointer;
+    }
+    nextPrint = firstInRowPrint;
+    stdout.write(nextPrint.runtimeType.toString().substring(0, 1));
   }
 
   printField(m, n) {
@@ -78,6 +85,7 @@ class QuattroLinkedList {
         printRight();
       }
       printDown();
+      print("");
     }
   }
 }

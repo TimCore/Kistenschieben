@@ -2,15 +2,11 @@ import 'FieldObject.dart';
 import 'dart:io';
 
 class Target extends FieldObject {
-  String target = "T";
 
   Target() : super() {
     this.passable = true;
-    stdout.write(target);
+    this.isTarget = true;
+    this.isWall = false;
   }
 
-//DIRTY
-  whoAmI() {
-    return "T";
-  }
 }

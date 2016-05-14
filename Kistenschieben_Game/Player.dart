@@ -1,29 +1,46 @@
 import 'FieldObject.dart';
-import 'Ground.dart';
-import 'dart:io';
+import 'dart:core';
+
 
 class Player {
-  FieldObject fieldObject;
+  FieldObject staysOn;
 
-  Player(FieldObject fieldObject) {
-    this.fieldObject = fieldObject;
+  Player(FieldObject staysOn) {
+    this.staysOn = staysOn;
   }
 
-  move(x, y) {
-    fieldObject.position.x + x;
-    fieldObject.position.y + y;
-  }
-
-  moveTest() {
-    print(fieldObject.toString());
-
-    if (fieldObject.rightPointer.passable == true) {
-      print("ist betretbar");
+  moveUp() {
+    if (staysOn.upPointer.passable == true) {
+      staysOn = staysOn.upPointer;
     }
+    print("PlayerPosition: " + getPosition());
+    print(staysOn.runtimeType);
+  }
+  moveRight() {
+    if (staysOn.rightPointer.passable == true) {
+      staysOn = staysOn.rightPointer;
+    }
+    print("PlayerPosition: " + getPosition());
+    print(staysOn.runtimeType);
+  }
+  moveDown() {
+    if (staysOn.downPointer.passable == true) {
+      staysOn = staysOn.downPointer;
+    }
+    print("PlayerPosition: " + getPosition());
+    print(staysOn.runtimeType);
+  }
+  moveLeft() {
+    if (staysOn.leftPointer.passable == true) {
+      staysOn = staysOn.leftPointer;
+    }
+    print("PlayerPosition: " + getPosition());
+    print(staysOn.runtimeType);
   }
 
-  getPlayerPosition() {
-    return this.fieldObject.position.x.toString() + "," +
-        this.fieldObject.position.y.toString();
+
+  getPosition() {
+    return this.staysOn.position.x.toString() + "," +
+        this.staysOn.position.y.toString();
   }
 }

@@ -3,13 +3,14 @@ import 'Ground.dart';
 import 'Target.dart';
 import 'QuattroLinkedList.dart';
 import 'Player.dart';
-import 'dart:io';
+import 'Crate.dart';
 
 
 class KistenschiebenModel {
 
   QuattroLinkedList qlList = new QuattroLinkedList();
   Player player;
+  Crate crate;
 
   KistenschiebenModel() {
 
@@ -32,15 +33,15 @@ class KistenschiebenModel {
             break;
           case 'P' :
             player = new Player(qlList.addRight(new Ground()));
-            stdout.write(player.getPlayerPosition());
-
+            break;
+          case 'C' :
+            crate = new Crate(qlList.addRight(new Ground()));
             break;
           case 'T' :
             qlList.addRight(new Target());
             break;
         }
       }
-      print("");
       if (level.length > 0) {
         //wollen wir anders abfangen DIRTY
         String firstChar = level.substring(0, 1);
@@ -63,8 +64,27 @@ class KistenschiebenModel {
     }
   }
 
+  moveUp() {
+    player.moveUp();
+  }
+  moveRight() {
+    player.moveRight();
+  }
+  moveDown() {
+    player.moveDown();
+  }
+  moveLeft() {
+    player.moveLeft();
+  }
+
+  show(m, n) {
+    print("PlayerPosition: " + player.getPosition());
+    print("CratePosition: " + crate.getPosition());
+    qlList.printField(m, n);
+  }
+
+
   reset() {
-    player.moveTest();
   }
 
   loadStatistics() {
