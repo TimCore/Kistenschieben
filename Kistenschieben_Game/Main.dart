@@ -8,11 +8,10 @@ main() {
   String levelOne = "WWWWWWGGGTWWGCPGWWGGGGWWGGGTWWWWWWW";
   ksModel.loadLvl(levelOne, m, n);
   ksModel.show(m, n);
-  ksModel.moveUp();
-  ksModel.moveUp();
-  ksModel.moveRight();
+  //ksModel.moveUp();
+  //ksModel.moveRight();
   //ksModel.moveDown();
-  //ksModel.moveLeft();
+  ksModel.moveLeft();
 
 
 }

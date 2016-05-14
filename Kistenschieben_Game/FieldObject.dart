@@ -23,5 +23,8 @@ class FieldObject {
     this.downPointer = null;
     this.leftPointer = null;
   }
+  isPassable(FieldObject player) {
+
+  }
 
 }
