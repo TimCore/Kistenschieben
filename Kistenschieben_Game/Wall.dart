@@ -1,5 +1,5 @@
 import 'FieldObject.dart';
-import 'dart:io';
+
 
 
 class Wall extends FieldObject {
@@ -8,6 +8,14 @@ class Wall extends FieldObject {
     this.passable = false;
     this.isTarget = false;
     this.isWall = true;
+
   }
+  isPassable(FieldObject player, pushPower) {
+    return false;
+  }
+  setCrate(crate) {
+    return false;
+  }
+
 
 }

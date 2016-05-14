@@ -1,6 +1,6 @@
 import 'FieldObject.dart';
 
-class Crate{
+class Crate {
   FieldObject staysOn;
 
   Crate(FieldObject staysOn) {
@@ -8,37 +8,63 @@ class Crate{
     staysOn.passable = false;
   }
 
-  move(FieldObject wherePlayerStaysOn) {
+  move(FieldObject wherePlayerStaysOn, pushPower) {
     if (wherePlayerStaysOn == staysOn.upPointer) {
-      moveDown();
-    } else if(wherePlayerStaysOn == staysOn.rightPointer){
-      moveLeft();
-    } else if(wherePlayerStaysOn == staysOn.downPointer) {
-      moveUp();
-    } else if(wherePlayerStaysOn == staysOn.leftPointer) {
-      moveRight();
+      return moveDown(pushPower);
+    } else if (wherePlayerStaysOn == staysOn.rightPointer) {
+      return moveLeft(pushPower);
+    } else if (wherePlayerStaysOn == staysOn.downPointer) {
+      return moveUp(pushPower);
+    } else if (wherePlayerStaysOn == staysOn.leftPointer) {
+      return moveRight(pushPower);
     }
-
   }
 
-  moveUp() {
-    if(staysOn.upPointer != null && staysOn.upPointer.passable == true) {
+  moveUp(int pushPower) {
+    pushPower--;
+    if (staysOn.upPointer != null &&
+        staysOn.upPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.upPointer;
+      print("CratePosition: " + getPosition());
+      return true;
+    } else {
+      return false;
     }
   }
-  moveRight() {
-    if(staysOn.rightPointer != null && staysOn.rightPointer.passable == true) {
+
+  moveRight(int pushPower) {
+    pushPower--;
+    if (staysOn.rightPointer != null &&
+        staysOn.rightPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.rightPointer;
+      print("CratePosition: " + getPosition());
+      return true;
+    } else {
+      return false;
     }
   }
-  moveDown() {
-    if(staysOn.downPointer != null && staysOn.downPointer.passable == true) {
+
+  moveDown(int pushPower) {
+    pushPower--;
+    if (staysOn.downPointer != null &&
+        staysOn.downPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.downPointer;
+      print("CratePosition: " + getPosition());
+      return true;
+    } else {
+      return false;
     }
   }
-  moveLeft() {
-    if(staysOn.leftPointer != null && staysOn.leftPointer.passable == true) {
+
+  moveLeft(int pushPower) {
+    pushPower--;
+    if (staysOn.leftPointer != null &&
+        staysOn.leftPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.leftPointer;
+      print("CratePosition: " + getPosition());
+      return true;
+    } else {
+      return false;
     }
   }
 

@@ -5,13 +5,14 @@ main() {
   int m = 6;
   int n = 6;
   KistenschiebenModel ksModel = new KistenschiebenModel();
-  String levelOne = "WWWWWWGGGTWWGCPGWWGGGGWWGGGTWWWWWWW";
+  String levelOne = "WWWWWWGGGTWWPCGGWWGGGGWWGGGTWWWWWWW";
   ksModel.loadLvl(levelOne, m, n);
   ksModel.show(m, n);
   //ksModel.moveUp();
   //ksModel.moveRight();
   //ksModel.moveDown();
-  ksModel.moveLeft();
+  ksModel.moveRight();
+  ksModel.moveRight();
 
 
 }

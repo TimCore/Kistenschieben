@@ -1,7 +1,8 @@
 import 'FieldObject.dart';
-import 'dart:io';
+import 'Crate.dart';
 
 class Ground extends FieldObject {
+
 
   Ground() : super() {
     this.passable = true;

@@ -1,6 +1,8 @@
 import 'Position.dart';
+import 'Crate.dart';
 
 class FieldObject {
+  Crate crate;
 
   //Position
   Position position = new Position(0, 0);
@@ -23,8 +25,18 @@ class FieldObject {
     this.downPointer = null;
     this.leftPointer = null;
   }
-  isPassable(FieldObject player) {
 
+  isPassable(FieldObject wherePlayerStaysOn, int pushPower) {
+    if (this.crate == null) { //bis hierhin debuggen....Fehler im System :D auf Wall prüfen / pushPower
+      return true;
+    } else if (pushPower > 0) {
+      return crate.move(wherePlayerStaysOn, pushPower);
+    } else {
+      return false;
+    }
+  }
+  setCrate(Crate crate) {
+    this.crate = crate;
   }
 
 }

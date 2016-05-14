@@ -36,6 +36,7 @@ class KistenschiebenModel {
             break;
           case 'C' :
             crate = new Crate(qlList.addRight(new Ground()));
+            crate.staysOn.setCrate(crate);
             break;
           case 'T' :
             qlList.addRight(new Target());
