@@ -1,13 +1,16 @@
 import 'FieldObject.dart';
-import 'Position.dart';
+import 'dart:io';
 
-class Ground extends FieldObject{
+class Ground extends FieldObject {
   String ground = "G";
-Ground() : super(){
- // this.passable = true;
-}
+
+  Ground() : super() {
+    this.passable = true;
+    stdout.write(ground);
+  }
+
 //DIRTY
-whoAmI() {
-  return "G";
-}
+  whoAmI() {
+    return "G";
+  }
 }
