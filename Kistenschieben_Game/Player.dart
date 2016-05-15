@@ -4,7 +4,7 @@ import 'dart:core';
 
 class Player {
   FieldObject staysOn;
-  int pushPower = 1;
+  int pushPower = 1; //parametrisierung für die Endabgabe funktioniert noch nicht!
 
   Player(FieldObject staysOn) {
     this.staysOn = staysOn;

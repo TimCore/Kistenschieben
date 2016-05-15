@@ -25,9 +25,13 @@ class Crate {
     if (staysOn.upPointer != null &&
         staysOn.upPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.upPointer;
+      staysOn.crate = this;
       print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return true;
     } else {
+      print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return false;
     }
   }
@@ -37,9 +41,13 @@ class Crate {
     if (staysOn.rightPointer != null &&
         staysOn.rightPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.rightPointer;
+      staysOn.crate = this;
       print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return true;
     } else {
+      print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return false;
     }
   }
@@ -49,9 +57,13 @@ class Crate {
     if (staysOn.downPointer != null &&
         staysOn.downPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.downPointer;
+      staysOn.crate = this;
       print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return true;
     } else {
+      print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return false;
     }
   }
@@ -61,9 +73,13 @@ class Crate {
     if (staysOn.leftPointer != null &&
         staysOn.leftPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.leftPointer;
+      staysOn.crate = this;
       print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return true;
     } else {
+      print("CratePosition: " + getPosition());
+      print(staysOn.runtimeType);
       return false;
     }
   }

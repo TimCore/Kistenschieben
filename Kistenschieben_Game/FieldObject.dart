@@ -27,7 +27,7 @@ class FieldObject {
   }
 
   isPassable(FieldObject wherePlayerStaysOn, int pushPower) {
-    if (this.crate == null) { //bis hierhin debuggen....Fehler im System :D auf Wall prüfen / pushPower
+    if (this.crate == null) {
       return true;
     } else if (pushPower > 0) {
       return crate.move(wherePlayerStaysOn, pushPower);
