@@ -84,4 +84,11 @@ class Player {
     return this.staysOn.position.x.toString() + "," +
         this.staysOn.position.y.toString();
   }
+
+  /*
+  Returns the position of the field as a String for the view
+   */
+  getPositionAsString(){
+    String str = "#pos" + this.staysOn.position.x.toString() + "_" + this.staysOn.position.y.toString();
+  }
 }

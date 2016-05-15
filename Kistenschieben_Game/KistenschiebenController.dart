@@ -7,6 +7,7 @@ class KistenschiebenController {
   KistenschiebenModel ksModel;
   KistenschiebenView view;
 
+
   /*
   Main
    */
@@ -16,18 +17,16 @@ class KistenschiebenController {
     window.onKeyDown.listen((KeyboardEvent ev) {
       //Noch implementieren:
       //knopfdruck ruft jeweilige Move-Methode auf
-      e.appendText(new String.fromCharCode(ev.keyCode));
+      //e.appendText(new String.fromCharCode(ev.keyCode));
     });
   }
-
-
-
+  
   /*
   tells the Player to move up. updates the view if the model returns true
    */
   void moveUp(){
     if(ksModel.moveUp() == true){
-      //view.update(ksModel, null);
+      updateView();
     }
   }
 
@@ -36,23 +35,25 @@ class KistenschiebenController {
    */
   void moveRight(){
     if(ksModel.moveRight() == true){
-      //view.update(ksModel, null);
+      updateView();
     }
   }
+
   /*
   tells the Player to move down. updates the view if the model returns true
    */
   void moveDown(){
     if(ksModel.moveDown() == true){
-      //view.update(ksModel, null);
+      updateView();
     }
   }
+
   /*
   tells the Player to move left. updates the view if the model returns true
    */
   void moveLeft(){
     if(ksModel.moveLeft() == true){
-      //view.update(ksModel, null);
+      updateView();
     }
   }
 
@@ -61,6 +62,15 @@ class KistenschiebenController {
    */
   void moveTouch(){
 
+  }
+
+  /*
+  takes the positions of the player and the crates
+   */
+  void updateView(){
+    List<String> cratePositions = ksModel.cratePositions(); //Liste von Positionen von Kisten;
+    String playerposition = ksModel.playerPositionAsString();
+    //view.updateView(playerposition, cratePositions);
   }
 
   /*

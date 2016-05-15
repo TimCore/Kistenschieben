@@ -12,6 +12,7 @@ class KistenschiebenModel {
   Player player = null;
   Crate crate = null;
   Target target = null;
+  List<Crate> crates;
 
   /*
   constructor
@@ -46,6 +47,7 @@ class KistenschiebenModel {
           case 'C' :
             crate = new Crate(qlList.addRight(new Ground()));
             crate.staysOn.setCrate(crate);
+            crates.add(crate);
             break;
           case 'T' :
             target = qlList.addRight(new Target(target));
@@ -119,9 +121,39 @@ class KistenschiebenModel {
   }
 
   show(m, n) {
+
+    int x = 3;
+    int y = 4;
+    String id;
+    id+= "#pos" + x.toString() + "_" + y.toString();
     print("PlayerPosition: " + player.getPosition());
     print("CratePosition: " + crate.getPosition());
     qlList.printField(m, n);
+  }
+
+  /*
+  Creates and returns a list with the positions of all crates for the view
+   */
+  List<String> cratePositions(){
+    List<String> dummy = new List();
+    for(int i = 0; i < crates.length; i++){
+      dummy.add(crates.elementAt(i).getPositionAsString());
+    }
+    return dummy;
+  }
+
+  /*
+  returns the position of the player as a string for the view
+   */
+  String playerPositionAsString(){
+    return player.getPositionAsString();
+  }
+
+  createPosString(){
+    int x = 3;
+    int y = 4;
+    String id;
+    id+= "#pos" + x.toString() + "_" + y.toString();
   }
 
 
