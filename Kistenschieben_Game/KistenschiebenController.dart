@@ -7,6 +7,9 @@ class KistenschiebenController {
   KistenschiebenModel ksModel;
   KistenschiebenView view;
 
+  /*
+  Main
+   */
   void main(){
     newGame();
     final e = querySelector("#keyListener");
