@@ -8,15 +8,18 @@ import 'Crate.dart';
 
 class KistenschiebenModel {
 
-  QuattroLinkedList qlList = new QuattroLinkedList();
-  Player player;
-  Crate crate;
+  QuattroLinkedList qlList = null;
+  Player player = null;
+  Crate crate = null;
+  Target target = null;
 
   KistenschiebenModel() {
 
   }
 
   loadLvl(String level, int m, int n) {
+    qlList = null;
+    qlList = new QuattroLinkedList();
     level = level.toUpperCase();
     for (int i = 0; i < m; i++) {
       //Spalten
@@ -39,7 +42,7 @@ class KistenschiebenModel {
             crate.staysOn.setCrate(crate);
             break;
           case 'T' :
-            qlList.addRight(new Target());
+            target = qlList.addRight(new Target(target));
             break;
         }
       }
@@ -58,7 +61,7 @@ class KistenschiebenModel {
             qlList.addRight(new Ground());
             break;
           case 'T' :
-            qlList.addDown(new Target());
+            target = qlList.addRight(new Target(target));
             break;
         }
       }
@@ -85,7 +88,8 @@ class KistenschiebenModel {
   }
 
 
-  reset() {
+  reset(level, m, n) {
+    loadLvl(level, m, n);
   }
 
   loadStatistics() {

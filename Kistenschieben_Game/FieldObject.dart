@@ -17,7 +17,8 @@ class FieldObject {
   FieldObject leftPointer;
   FieldObject upPointer;
   FieldObject downPointer;
-
+  FieldObject prevTarget;
+  FieldObject nextTarget;
 
   FieldObject() {
     this.upPointer = null;
@@ -35,6 +36,9 @@ class FieldObject {
       return false;
     }
   }
+
+
+
   setCrate(Crate crate) {
     this.crate = crate;
   }

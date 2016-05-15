@@ -1,7 +1,7 @@
 import 'FieldObject.dart';
 
 class Crate {
-  FieldObject staysOn;
+  var staysOn;
 
   Crate(FieldObject staysOn) {
     this.staysOn = staysOn;
@@ -42,6 +42,11 @@ class Crate {
         staysOn.rightPointer.isPassable(staysOn.upPointer, pushPower) == true) {
       staysOn = staysOn.rightPointer;
       staysOn.crate = this;
+      if (staysOn.runtimeType.toString().contains("Target")) {
+        if (staysOn.checkOutNeighbours() == true) {
+          print("You won!!!");
+        }
+      }
       print("CratePosition: " + getPosition());
       print(staysOn.runtimeType);
       return true;
@@ -83,7 +88,6 @@ class Crate {
       return false;
     }
   }
-
 
   getPosition() {
     return this.staysOn.position.x.toString() + "," +
