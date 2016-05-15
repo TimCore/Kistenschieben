@@ -13,10 +13,16 @@ class KistenschiebenModel {
   Crate crate = null;
   Target target = null;
 
+  /*
+  constructor
+   */
   KistenschiebenModel() {
 
   }
 
+  /*
+  loads the level from a String with the size m x n
+   */
   loadLvl(String level, int m, int n) {
     qlList = null;
     qlList = new QuattroLinkedList();
@@ -68,17 +74,48 @@ class KistenschiebenModel {
     }
   }
 
-  moveUp() {
-    player.moveUp();
+  /*
+  tells the player to go up. Returns true if possible, false if not
+   */
+  bool moveUp() {
+    if(player.moveUp() == true){
+      return true;
+    }else{
+      return false;
+    }
   }
-  moveRight() {
-    player.moveRight();
+
+  /*
+  tells the player to go right. Returns true if possible, false if not
+   */
+  bool moveRight() {
+    if(player.moveRight() == true){
+      return true;
+    }else{
+      return false;
+    }
   }
-  moveDown() {
-    player.moveDown();
+
+  /*
+  tells the player to go down. Returns true if possible, false if not
+   */
+  bool moveDown() {
+    if(player.moveDown() == true){
+      return true;
+    }else{
+      return false;
+    }
   }
-  moveLeft() {
-    player.moveLeft();
+
+  /*
+  tells the player to go left. Returns true if possible, false if not
+   */
+  bool moveLeft() {
+    if(player.moveLeft() == true){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   show(m, n) {

@@ -10,33 +10,73 @@ class Player {
     this.staysOn = staysOn;
   }
 
-  moveUp() {
+  /*
+  Moves the player to the upper position
+  returns true if possible, false if not
+   */
+  bool moveUp() {
     if (staysOn.upPointer.isPassable(staysOn, pushPower) == true) {
       staysOn = staysOn.upPointer;
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return true;
+    }else{
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return false;
     }
-    print("PlayerPosition: " + getPosition());
-    print(staysOn.runtimeType);
   }
-  moveRight() {
+
+  /*
+  Moves the player to the right position
+  returns true if possible, false if not
+   */
+  bool moveRight() {
     if (staysOn.rightPointer.isPassable(staysOn, pushPower) == true) {
       staysOn = staysOn.rightPointer;
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return true;
+    }else{
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return false;
     }
-    print("PlayerPosition: " + getPosition());
-    print(staysOn.runtimeType);
   }
-  moveDown() {
+
+  /*
+  Moves the player to the position below
+  returns true if possible, false if not
+   */
+  bool moveDown() {
     if (staysOn.downPointer.isPassable(staysOn, pushPower) == true) {
       staysOn = staysOn.downPointer;
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return true;
+    }else{
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return false;
     }
-    print("PlayerPosition: " + getPosition());
-    print(staysOn.runtimeType);
+
   }
-  moveLeft() {
+
+  /*
+  Moves the player to the left position
+  returns true if possible, false if not
+   */
+  bool moveLeft() {
     if (staysOn.leftPointer.isPassable(staysOn, pushPower) == true) {
       staysOn = staysOn.leftPointer;
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return true;
+    }else{
+      print("PlayerPosition: " + getPosition());
+      print(staysOn.runtimeType);
+      return false;
     }
-    print("PlayerPosition: " + getPosition());
-    print(staysOn.runtimeType);
   }
 
 
