@@ -10,6 +10,7 @@ class QuattroLinkedList {
   FieldObject firstInRow;
   FieldObject nextPrint;
   FieldObject firstInRowPrint;
+  List crateList = new List();
 
   QuattroLinkedList() {
     // braucht glaub ich noch ein fieldObject damit der root irgendwas ist
@@ -80,6 +81,8 @@ class QuattroLinkedList {
   }
 
   printField(m, n) {
+    nextPrint = root;
+    firstInRowPrint = root;
     for (int i = 0; i < m; i++) {
       for (int j = 1; j < n; j++) {
         printRight();
@@ -88,4 +91,38 @@ class QuattroLinkedList {
       print("");
     }
   }
+
+  searchRight() {
+    if (nextPrint.rightPointer != null) {
+      if(nextPrint.crate != null) {
+        crateList.add(nextPrint.crate.getPositionAsString());
+      }
+      nextPrint = nextPrint.rightPointer;
+    }
+
+  }
+
+  searchDown() {
+    if (firstInRowPrint.downPointer != null) {
+      if(firstInRowPrint.crate != null) {
+        crateList.add(nextPrint.crate.getPositionAsString());
+      }
+      firstInRowPrint = firstInRowPrint.downPointer;
+    }
+    nextPrint = firstInRowPrint;
+
+  }
+
+  createCrateList(m, n) {
+    nextPrint = root;
+    firstInRowPrint = root;
+    for (int i = 0; i < m; i++) {
+      for (int j = 1; j < n; j++) {
+        searchRight();
+      }
+      searchDown();
+    }
+    return crateList;
+  }
+
 }

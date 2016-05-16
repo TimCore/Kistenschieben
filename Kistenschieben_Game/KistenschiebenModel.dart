@@ -121,7 +121,6 @@ class KistenschiebenModel {
   }
 
   show(m, n) {
-
     int x = 3;
     int y = 4;
     String id;
@@ -129,7 +128,10 @@ class KistenschiebenModel {
     print("PlayerPosition: " + player.getPosition());
     print("CratePosition: " + crate.getPosition());
     qlList.printField(m, n);
+  }
 
+  crateList() {
+    return qlList.createCrateList(6,6);
   }
 
   /*

@@ -3,6 +3,8 @@ import 'KistenschiebenController.dart';
 
 main() {
   KistenschiebenController controller = new KistenschiebenController();
+  KistenschiebenModel ksModel = new KistenschiebenModel();
+  print(ksModel.crateList());
 /*  int m = 6;
   int n = 6;
   KistenschiebenModel ksModel = new KistenschiebenModel();
