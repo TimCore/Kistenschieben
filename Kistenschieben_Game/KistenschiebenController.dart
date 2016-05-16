@@ -1,16 +1,33 @@
 import 'KistenschiebenModel.dart';
 import 'KistenschiebenView.dart';
 import 'dart:html';
+import 'dart:async';
+import 'dart:convert';
 
 class KistenschiebenController {
 
   KistenschiebenModel ksModel;
   KistenschiebenView view;
+  /*
+  CONSTRUCTOR
+   */
+  KistenschiebenController(){
 
+    window.onKeyDown.listen((KeyboardEvent ev) {
+      //if (ksModel.stopped) return;
+      switch (ev.keyCode) {
+        case KeyCode.LEFT:  moveLeft(); break;
+        case KeyCode.RIGHT: moveRight(); break;
+        case KeyCode.UP:    moveUp(); break;
+        case KeyCode.DOWN:  moveDown(); break;
+      }
+    });
+
+
+  }
 
   /*
-  Main
-   */
+
   void main(){
     newGame();
     final e = querySelector("#keyListener");
@@ -19,7 +36,7 @@ class KistenschiebenController {
       //knopfdruck ruft jeweilige Move-Methode auf
       //e.appendText(new String.fromCharCode(ev.keyCode));
     });
-  }
+  }*/
   
   /*
   tells the Player to move up. updates the view if the model returns true
