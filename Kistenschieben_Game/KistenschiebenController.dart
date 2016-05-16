@@ -8,6 +8,7 @@ class KistenschiebenController {
 
   KistenschiebenModel ksModel;
   KistenschiebenView ksView;
+  static String LEVELONE = "WWWWWWGGCTWWGGGGWWGGCPWWGGGTWWWWWWW";
   /*
   CONSTRUCTOR
    */
@@ -25,18 +26,6 @@ class KistenschiebenController {
 
 
   }
-
-  /*
-
-  void main(){
-    newGame();
-    final e = querySelector("#keyListener");
-    window.onKeyDown.listen((KeyboardEvent ev) {
-      //Noch implementieren:
-      //knopfdruck ruft jeweilige Move-Methode auf
-      //e.appendText(new String.fromCharCode(ev.keyCode));
-    });
-  }*/
   
   /*
   tells the Player to move up. updates the view if the model returns true
@@ -85,9 +74,9 @@ class KistenschiebenController {
   takes the positions of the player and the crates
    */
   void updateView(){
-    List<String> cratePositions = ksModel.cratePositions(); //Liste von Positionen von Kisten;
+    List<String> cratePositions = ksModel.crateList(); //Liste von Positionen von Kisten;
     String playerposition = ksModel.playerPositionAsString();
-    //view.updateView(playerposition, cratePositions);
+    ksView.updateView(playerposition, cratePositions);
   }
 
   /*
@@ -98,23 +87,15 @@ class KistenschiebenController {
     ksView = new KistenschiebenView();
     int m = 6;
     int n = 6;
-    String levelOne = "WWWWWWGGCTWWGGGGWWGGCPWWGGGTWWWWWWW";
-    ksModel.loadLvl(levelOne, m, n);
-    //view.update(ksModel, null);
-    /*
-    ksModel.show(m, n);
-    ksModel.moveUp();
-    ksModel.moveLeft();
-    ksModel.moveDown();
-    ksModel.moveLeft();
-    ksModel.moveDown();
-    ksModel.moveRight();
-    ksModel.moveLeft();
-    ksModel.moveUp();
-    ksModel.moveUp();
-    ksModel.moveUp();
-    ksModel.moveRight();
-    */
+    ksModel.loadLvl(LEVELONE, m, n);
+    //ksView.loadlevel(LEVELONE, m, n);
+  }
+
+  void resetGame(){
+    int m = 6;
+    int n = 6;
+    ksModel.reset(LEVELONE, m, n);
+
   }
 
 

@@ -130,19 +130,8 @@ class KistenschiebenModel {
     qlList.printField(m, n);
   }
 
-  crateList() {
+  List crateList() {
     return qlList.createCrateList(6,6);
-  }
-
-  /*
-  Creates and returns a list with the positions of all crates for the view
-   */
-  List<String> cratePositions(){
-    List<String> dummy = new List();
-    for(int i = 0; i < crates.length; i++){
-      dummy.add(crates.elementAt(i).getPositionAsString());
-    }
-    return dummy;
   }
 
   /*
@@ -160,7 +149,7 @@ class KistenschiebenModel {
   }
 
 
-  reset(level, m, n) {
+  reset(String level, int m, int n) {
     loadLvl(level, m, n);
   }
 
