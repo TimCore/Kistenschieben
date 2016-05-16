@@ -7,7 +7,7 @@ import 'dart:convert';
 class KistenschiebenController {
 
   KistenschiebenModel ksModel;
-  KistenschiebenView view;
+  KistenschiebenView ksView;
   /*
   CONSTRUCTOR
    */
@@ -95,7 +95,7 @@ class KistenschiebenController {
    */
   void newGame(){
     ksModel = new KistenschiebenModel();
-    view = new KistenschiebenView();
+    ksView = new KistenschiebenView();
     int m = 6;
     int n = 6;
     String levelOne = "WWWWWWGGCTWWGGGGWWGGCPWWGGGTWWWWWWW";

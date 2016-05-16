@@ -1,8 +1,9 @@
 import 'KistenschiebenModel.dart';
-
+import 'KistenschiebenController.dart';
 
 main() {
-  int m = 6;
+  KistenschiebenController controller = new KistenschiebenController();
+/*  int m = 6;
   int n = 6;
   KistenschiebenModel ksModel = new KistenschiebenModel();
   String levelOne = "WWWWWWGGCTWWGGGGWWGGCPWWGGGTWWWWWWW";
@@ -19,7 +20,7 @@ main() {
   ksModel.moveUp();
   ksModel.moveUp();
   ksModel.moveRight();
-
+*/
 
 
 

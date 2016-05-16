@@ -47,7 +47,7 @@ class KistenschiebenModel {
           case 'C' :
             crate = new Crate(qlList.addRight(new Ground()));
             crate.staysOn.setCrate(crate);
-            crates.add(crate);
+            //crates.add(crate);
             break;
           case 'T' :
             target = qlList.addRight(new Target(target));
@@ -125,10 +125,11 @@ class KistenschiebenModel {
     int x = 3;
     int y = 4;
     String id;
-    id+= "#pos" + x.toString() + "_" + y.toString();
+    id = "#pos" + x.toString() + "_" + y.toString();
     print("PlayerPosition: " + player.getPosition());
     print("CratePosition: " + crate.getPosition());
     qlList.printField(m, n);
+
   }
 
   /*
